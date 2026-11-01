@@ -1,15 +1,23 @@
 name: TestingOicd
 on:
      push:
-      branches: ["master"]
+       branches: ["master"]
      workflow_dispatch:
 jobs:
-    testig: 
-    runs-on: ubuntu-latest
-    steps:
-     - name: checkout_code
-       uses: actions/checkout@v4
+  testig: 
+     runs-on: ubuntu-latest
+     permissions:
+      id-token: write
+      contents: read
+     steps:
+       - name: checkout repository
+         uses: actions/checkout@v4
        
-     - name: checkouts_code
-        run: echo "get code"
-       
+       - name: sayinghellowworld2
+         run: echo "hello, world2"
+
+       - name: sayinghellowworld3
+         run: echo "hello, world3"
+
+       - name: sayinghellowworld4
+         run: echo "hello, world4"       
