@@ -1,0 +1,15 @@
+name: TestingOicd
+on:
+     push:
+      branches: ["main"]
+     workflow_dispatch:
+jobs:
+    testig: 
+    runs-on: ubuntu-latest
+    steps:
+     - name: checkout_code
+       uses: actions/checkout@v4
+       
+     - name: checkout_code
+        run: echo "get code"
+       
