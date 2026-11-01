@@ -1,7 +1,7 @@
 name: TestingOicd
 on:
      push:
-      branches: ["main"]
+      branches: ["master"]
      workflow_dispatch:
 jobs:
     testig: 
@@ -10,6 +10,6 @@ jobs:
      - name: checkout_code
        uses: actions/checkout@v4
        
-     - name: checkout_code
+     - name: checkouts_code
         run: echo "get code"
        
