@@ -1,0 +1,21 @@
+name: Test AWS OIDC Authentication
+  runs-on: ubuntu-latest
+
+   steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::431997621869:role/github-actions-oidc-test
+          aws-region: us-east-1
+
+      - name: Verify AWS Identity
+        run: |
+          echo "Testing AWS OIDC connection..."
+          aws sts get-caller-identity
+
+      - name: Test Successful Authentication
+        run: |
+          echo "AWS OIDC Authentication Successful!"
